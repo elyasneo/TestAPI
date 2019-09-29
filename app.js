@@ -10,6 +10,7 @@ const productRoutes = require('./api/routes/products')
 const orderRoutes = require('./api/routes/orders')
 const signupRoutes = require('./api/routes/signup')
 const loginRoutes = require('./api/routes/login')
+const testRoutes = require('./api/routes/test')
 
 mongoose.connect(process.env.MONGO_CONNECTION || 'mongodb://localhost:27017/TestApi', {
     useNewUrlParser: true,
@@ -38,6 +39,7 @@ app.use('/products', productRoutes)
 app.use('/orders', orderRoutes)
 app.use('/signup', signupRoutes)
 app.use('/login', loginRoutes)
+app.use('/test', testRoutes)
 
 
 app.use((req, res, next) => {
